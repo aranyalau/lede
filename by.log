@@ -1,0 +1,281 @@
+make[2]: Entering directory '/home/simon/lede/scripts/config'
+make[2]: 'conf' is up to date.
+make[2]: Leaving directory '/home/simon/lede/scripts/config'
+make[1]: Entering directory '/home/simon/lede'
+make[2]: Entering directory '/home/simon/lede'
+make[2]: Entering directory '/home/simon/lede'
+rm -rf /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt
+make[3]: Entering directory '/home/simon/lede/target/linux'
+make[4]: Entering directory '/home/simon/lede/target/linux/armvirt'
+rm -f /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/localversion
+/home/simon/lede/scripts/kconfig.pl  + + /home/simon/lede/target/linux/generic/config-5.15 /home/simon/lede/target/linux/armvirt/config-5.15 /home/simon/lede/target/linux/armvirt/64/config-5.15 > /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.target
+awk '/^(#[[:space:]]+)?CONFIG_KERNEL/{sub("CONFIG_KERNEL_","CONFIG_");print}' /home/simon/lede/.config >> /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.target
+echo "# CONFIG_KALLSYMS_EXTRA_PASS is not set" >> /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.target
+echo "# CONFIG_KALLSYMS_ALL is not set" >> /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.target
+echo "CONFIG_KALLSYMS_UNCOMPRESSED=y" >> /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.target
+/home/simon/lede/scripts/package-metadata.pl kconfig /home/simon/lede/tmp/.packageinfo /home/simon/lede/.config 5.15 > /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.override
+/home/simon/lede/scripts/kconfig.pl 'm+' '+' /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.target /dev/null /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.override > /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.set
+mv /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.set /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.old
+grep -v INITRAMFS /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.old > /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.set
+echo 'CONFIG_INITRAMFS_SOURCE=""' >> /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.set
+echo '# CONFIG_INITRAMFS_FORCE is not set' >> /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.set
+rm -rf /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/modules
+cmp -s /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.set /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.prev || { cp /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.set /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config; cp /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.set /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.prev; }
+export MAKEFLAGS= ; [ -d /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/user_headers ] || make -C /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94 KCFLAGS="-fmacro-prefix-map=/home/simon/lede/build_dir/target-aarch64_cortex-a53_musl=target-aarch64_cortex-a53_musl -fno-caller-saves " HOSTCFLAGS="-O2 -I/home/simon/lede/staging_dir/host/include  -Wall -Wmissing-prototypes -Wstrict-prototypes" CROSS_COMPILE="aarch64-openwrt-linux-musl-" ARCH="arm64" KBUILD_HAVE_NLS=no KBUILD_BUILD_USER="" KBUILD_BUILD_HOST="" KBUILD_BUILD_TIMESTAMP="Sat Feb 18 16:53:48 2023" KBUILD_BUILD_VERSION="0" KBUILD_HOSTLDFLAGS="-L/home/simon/lede/staging_dir/host/lib" CONFIG_SHELL="bash" V=''  cmd_syscalls=  KERNELRELEASE=5.15.94 CC="aarch64-openwrt-linux-musl-gcc"  INSTALL_HDR_PATH=/home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/user_headers headers_install
+grep '=[ym]' /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.set | LC_ALL=C sort | /home/simon/lede/staging_dir/host/bin/mkhash md5 > /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.vermagic
+touch /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.configured
+rm -f /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/vmlinux /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/System.map
+make -C /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94 KCFLAGS="-fmacro-prefix-map=/home/simon/lede/build_dir/target-aarch64_cortex-a53_musl=target-aarch64_cortex-a53_musl -fno-caller-saves " HOSTCFLAGS="-O2 -I/home/simon/lede/staging_dir/host/include  -Wall -Wmissing-prototypes -Wstrict-prototypes" CROSS_COMPILE="aarch64-openwrt-linux-musl-" ARCH="arm64" KBUILD_HAVE_NLS=no KBUILD_BUILD_USER="" KBUILD_BUILD_HOST="" KBUILD_BUILD_TIMESTAMP="Sat Feb 18 16:53:48 2023" KBUILD_BUILD_VERSION="0" KBUILD_HOSTLDFLAGS="-L/home/simon/lede/staging_dir/host/lib" CONFIG_SHELL="bash" V=''  cmd_syscalls=  KERNELRELEASE=5.15.94 CC="aarch64-openwrt-linux-musl-gcc" olddefconfig
+make[5]: Entering directory '/home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94'
+make[2]: Leaving directory '/home/simon/lede'
+#
+# No change to .config
+#
+make[5]: Leaving directory '/home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94'
+make -C /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94 KCFLAGS="-fmacro-prefix-map=/home/simon/lede/build_dir/target-aarch64_cortex-a53_musl=target-aarch64_cortex-a53_musl -fno-caller-saves " HOSTCFLAGS="-O2 -I/home/simon/lede/staging_dir/host/include  -Wall -Wmissing-prototypes -Wstrict-prototypes" CROSS_COMPILE="aarch64-openwrt-linux-musl-" ARCH="arm64" KBUILD_HAVE_NLS=no KBUILD_BUILD_USER="" KBUILD_BUILD_HOST="" KBUILD_BUILD_TIMESTAMP="Sat Feb 18 16:53:48 2023" KBUILD_BUILD_VERSION="0" KBUILD_HOSTLDFLAGS="-L/home/simon/lede/staging_dir/host/lib" CONFIG_SHELL="bash" V=''  cmd_syscalls=  KERNELRELEASE=5.15.94 CC="aarch64-openwrt-linux-musl-gcc" Image modules
+make[5]: Entering directory '/home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94'
+  HOSTCC  scripts/sorttable
+  HOSTCC  scripts/mod/mk_elfconfig
+  MKELF   scripts/mod/elfconfig.h
+  HOSTCC  scripts/mod/modpost.o
+  HOSTCC  scripts/mod/sumversion.o
+  HOSTCC  scripts/mod/file2alias.o
+  HOSTLD  scripts/mod/modpost
+  CALL    scripts/atomic/check-atomics.sh
+  CALL    scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/version.o
+  AR      init/built-in.a
+  GEN     .version
+  CHK     include/generated/compile.h
+  LD      vmlinux.o
+  MODPOST vmlinux.symvers
+  MODINFO modules.builtin.modinfo
+  GEN     modules.builtin
+  LD      .tmp_vmlinux.kallsyms1
+  KSYMS   .tmp_vmlinux.kallsyms1.S
+  AS      .tmp_vmlinux.kallsyms1.S
+  LD      .tmp_vmlinux.kallsyms2
+  KSYMS   .tmp_vmlinux.kallsyms2.S
+  AS      .tmp_vmlinux.kallsyms2.S
+  LD      vmlinux
+  SORTTAB vmlinux
+  SYSMAP  System.map
+  OBJCOPY arch/arm64/boot/Image
+  MODPOST modules-only.symvers
+  GEN     Module.symvers
+make[5]: Leaving directory '/home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94'
+# If .config did not change, use the previous timestamp to avoid package rebuilds
+cmp -s /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.modules.save && mv /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.modules.save /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config; cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.config.modules.save
+touch /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/linux-armvirt_64/linux-5.15.94/.modules
+make -C image compile TARGET_BUILD=
+make[5]: Entering directory '/home/simon/lede/target/linux/armvirt'
+make[5]: Nothing to be done for 'compile'.
+make[5]: Leaving directory '/home/simon/lede/target/linux/armvirt/image'
+make[4]: Leaving directory '/home/simon/lede/target/linux/armvirt'
+make[3]: Leaving directory '/home/simon/lede/target/linux'
+time: target/linux/compile#59.71#422.88#214.50
+make[2]: Leaving directory '/home/simon/lede'
+export MAKEFLAGS= ;make -w -r buildinfo
+make[2]: Entering directory '/home/simon/lede'
+make[2]: Entering directory '/home/simon/lede'
+ make[3] diffconfig buildversion feedsversion
+make[3]: Entering directory '/home/simon/lede/feeds/packages/lang/perl'
+make[3]: Entering directory '/home/simon/lede/feeds/packages/lang/golang/golang'
+make[3]: Entering directory '/home/simon/lede/package/utils/lua'
+make[3]: Entering directory '/home/simon/lede/package/libs/libjson-c'
+make[3]: Entering directory '/home/simon/lede/package/libs/ncurses'
+make[3]: Entering directory '/home/simon/lede/feeds/luci/modules/luci-base'
+make[3]: Entering directory '/home/simon/lede/package/utils/e2fsprogs'
+make[3]: Entering directory '/home/simon/lede/package/system/fwtool'
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/boost'
+make[3]: Entering directory '/home/simon/lede/package/system/usign'
+make[3]: Entering directory '/home/simon/lede/package/libs/toolchain'
+Selected Boost API aapcs for architecture aarch64 and cpu type "cortex-a53" 
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/toolchain/.pkgdir/libc/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libc_installed
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/lang/golang/golang'
+time: package/feeds/packages/golang/host-compile#0.76#1.53#1.99
+echo "libc" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/toolchain.default.install
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+echo '1' | cmp -s - /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libgcc.version || { echo '1' > /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libgcc.version;  } 
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/libffi'
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/toolchain/.pkgdir/libgcc/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libgcc_installed
+echo "libgcc" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/toolchain.default.install
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+echo '1' | cmp -s - /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libatomic.version || { echo '1' > /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libatomic.version;  } 
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/toolchain/.pkgdir/libatomic/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libatomic_installed
+echo "libatomic" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/toolchain.default.install
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+echo '6' | cmp -s - /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libstdcpp.version || { echo '6' > /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libstdcpp.version;  } 
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/toolchain/.pkgdir/libstdcpp/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libstdcpp_installed
+echo "libstdcpp" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/toolchain.default.install
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/toolchain/.pkgdir/libpthread/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libpthread_installed
+echo "libpthread" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/toolchain.default.install
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/toolchain/.pkgdir/librt/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.librt_installed
+echo "librt" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/toolchain.default.install
+make[3]: Leaving directory '/home/simon/lede/package/libs/toolchain'
+time: package/libs/toolchain/compile#0.14#1.28#1.63
+make[3]: Entering directory '/home/simon/lede/package/utils/bzip2'
+ make[4] scripts/config/conf
+make[3]: Leaving directory '/home/simon/lede/package/libs/libjson-c'
+time: package/libs/libjson-c/host-compile#0.17#1.16#2.82
+make[3]: Entering directory '/home/simon/lede/package/libs/libnl'
+make[3]: Leaving directory '/home/simon/lede/package/utils/lua'
+time: package/utils/lua/host-compile#0.20#1.22#4.24
+make[3]: Entering directory '/home/simon/lede/package/network/utils/wireless-tools'
+make[3]: Leaving directory '/home/simon/lede/package/libs/ncurses'
+time: package/libs/ncurses/host-compile#0.39#6.17#15.04
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/alsa-ucm-conf'
+make[3]: Leaving directory '/home/simon/lede/package/system/fwtool'
+time: package/system/fwtool/host-compile#0.37#7.84#15.79
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/libffi'
+time: package/feeds/packages/libffi/host-compile#0.16#7.42#14.16
+make[3]: Entering directory '/home/simon/lede/feeds/packages/net/autossh'
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/expat'
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/wireless_tools.29/.pkgdir/wireless-tools/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.wireless-tools_installed
+make[3]: Leaving directory '/home/simon/lede/package/system/usign'
+time: package/system/usign/host-compile#0.81#9.57#18.41
+echo "wireless-tools" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/wireless-tools.default.install
+make[3]: Leaving directory '/home/simon/lede/package/network/utils/wireless-tools'
+time: package/network/utils/wireless-tools/compile#0.45#7.43#11.96
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/nghttp2'
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/libdaemon'
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/expat-2.5.0/.pkgdir/libexpat/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/autossh-1.4g/.pkgdir/autossh/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.autossh_installed
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libexpat_installed
+make[3]: Leaving directory '/home/simon/lede/package/utils/bzip2'
+time: package/utils/bzip2/host-compile#0.42#9.08#18.60
+echo "libexpat" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/expat.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/expat'
+time: package/feeds/packages/expat/compile#0.24#2.31#4.76
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/libical'
+echo "autossh" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/autossh.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/net/autossh'
+time: package/feeds/packages/autossh/compile#0.23#2.39#5.18
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/lzo'
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/libffi'
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/libdaemon-0.14/.pkgdir/libdaemon/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libdaemon_installed
+echo "libdaemon" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libdaemon.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/libdaemon'
+time: package/feeds/packages/libdaemon/compile#0.33#6.45#10.09
+make[3]: Leaving directory '/home/simon/lede/package/utils/e2fsprogs'
+time: package/utils/e2fsprogs/host-compile#0.25#14.38#29.20
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/confuse'
+make[3]: Entering directory '/home/simon/lede/feeds/packages/utils/zstd'
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+echo '200' | cmp -s - /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libnl-core.version || { echo '200' > /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libnl-core.version;  } 
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/libnl-3.7.0/.pkgdir/libnl-core/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libnl-core_installed
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+echo '200' | cmp -s - /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libnl-genl.version || { echo '200' > /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libnl-genl.version;  } 
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/libnl-3.7.0/.pkgdir/libnl-genl/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libnl-genl_installed
+make[3]: Leaving directory '/home/simon/lede/package/libs/libnl'
+time: package/libs/libnl/compile#0.25#19.78#30.42
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/libtirpc'
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/alsa-ucm-conf-1.2.6.2/.pkgdir/alsa-ucm-conf/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.alsa-ucm-conf_installed
+echo "alsa-ucm-conf" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/alsa-ucm-conf.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/alsa-ucm-conf'
+time: package/feeds/packages/alsa-ucm-conf/compile#0.30#9.69#29.03
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/gperf'
+echo '14' | cmp -s - /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libnghttp2.version || { echo '14' > /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libnghttp2.version;  } 
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/nghttp2-1.44.0/.pkgdir/libnghttp2/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libnghttp2_installed
+echo "libnghttp2" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/nghttp2.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/nghttp2'
+time: package/feeds/packages/nghttp2/compile#0.27#14.56#28.00
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+make[3]: Entering directory '/home/simon/lede/feeds/packages/utils/coremark'
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/libffi-3.4.2/.pkgdir/libffi/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libffi_installed
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+echo '2' | cmp -s - /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/liblzo.version || { echo '2' > /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/liblzo.version;  } 
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/libical-3.0.9/.pkgdir/libical/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/lzo-2.10/.pkgdir/liblzo/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libical_installed
+echo "libffi" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libffi.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/libffi'
+time: package/feeds/packages/libffi/compile#0.14#22.76#27.34
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.liblzo_installed
+echo "libical" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libical.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/libical'
+time: package/feeds/packages/libical/compile#0.27#16.47#27.21
+make[3]: Entering directory '/home/simon/lede/feeds/packages/net/etherwake'
+make[3]: Entering directory '/home/simon/lede/feeds/packages/devel/diffutils'
+echo "liblzo" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/lzo.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/lzo'
+time: package/feeds/packages/lzo/compile#0.18#17.70#27.10
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/confuse-3.3/.pkgdir/confuse/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.confuse_installed
+make[3]: Entering directory '/home/simon/lede/feeds/packages/utils/exfatprogs'
+echo "confuse" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/confuse.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/confuse'
+time: package/feeds/packages/confuse/compile#0.16#13.58#21.69
+make[3]: Entering directory '/home/simon/lede/feeds/packages/sound/fdk-aac'
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/libtirpc-1.3.2/.pkgdir/libtirpc/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libtirpc_installed
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/etherwake-1.09.orig/.pkgdir/etherwake/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.etherwake_installed
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/gperf'
+time: package/feeds/packages/gperf/host-compile#0.24#5.10#9.60
+make[3]: Entering directory '/home/simon/lede/package/libs/gettext-full'
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/zstd-1.5.2/.pkgdir/libzstd/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+echo "etherwake" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/etherwake.default.install
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.libzstd_installed
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/net/etherwake'
+time: package/feeds/packages/etherwake/compile#0.35#4.46#7.12
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/opus'
+echo "libtirpc" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/libtirpc.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/libs/libtirpc'
+time: package/feeds/packages/libtirpc/compile#0.39#12.88#19.00
+echo "libzstd" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/zstd.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/utils/zstd'
+time: package/feeds/packages/zstd/compile#0.29#16.51#25.89
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/giflib'
+make[3]: Entering directory '/home/simon/lede/feeds/packages/libs/flac'
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/coremark-eefc986ebd3452d6adde22eafaff3e5c859f29e4/.pkgdir/coremark/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.coremark_installed
+echo "coremark" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/coremark.default.install
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/exfatprogs-1.2.0/.pkgdir/exfat-mkfs/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/utils/coremark'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.exfat-mkfs_installed
+time: package/feeds/packages/coremark/compile#0.34#6.63#10.90
+make[3]: Entering directory '/home/simon/lede/feeds/packages/utils/gzip'
+echo "exfat-mkfs" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/exfatprogs.default.install
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/exfatprogs-1.2.0/.pkgdir/exfat-fsck/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
+touch /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp/.exfat-fsck_installed
+echo "exfat-fsck" >> /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/pkginfo/exfatprogs.default.install
+make[3]: Leaving directory '/home/simon/lede/feeds/packages/utils/exfatprogs'
+time: package/feeds/packages/exfatprogs/compile#0.30#5.52#8.97
+make[3]: Entering directory '/home/simon/lede/feeds/packages/utils/hd-idle'
+. /home/simon/lede/include/shell.sh; bzcat /home/simon/lede/dl/LuaSrcDiet-0.12.1.tar.bz2 | tar -C /home/simon/lede/build_dir/hostpkg/LuaSrcDiet-0.12.1/.. -xf -
+mkdir -p /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/stamp
+SHELL= flock /home/simon/lede/tmp/.root-copy.flock -c 'cp -fpR /home/simon/lede/build_dir/target-aarch64_cortex-a53_musl/hd-idle/.pkgdir/hd-idle/. /home/simon/lede/staging_dir/target-aarch64_cortex-a53_musl/root-armvirt/'
